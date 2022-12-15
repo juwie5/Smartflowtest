@@ -1,10 +1,10 @@
 <template>
     <div>
         <section>
-             <div class="signup-container">
+             <div class="bg-white w-2/5 p-24">
                 <form @submit.prevent="reqUser">
-                    <h4 class="create-acct-title">Create your account</h4>
-                    <p class="create-acct-paragraph">Fill the form below to register</p>
+                    <h4 class="text-base text-black font-medium">Create your account</h4>
+                    <p class="text-[#6F6F6F]">Fill the form below to register</p>
                     <input type="text" name="username"  placeholder="Firstname" v-model="form.username" maxlength="30" required>
                     <input type="email" name="email" placeholder="Email address" v-model="form.email" required>
                     <div class="pass">
@@ -55,3 +55,4 @@ export default {
 @import '@/styles/variables';
 @import '@/styles/login';
 </style>
+
