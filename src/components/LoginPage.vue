@@ -14,10 +14,12 @@
                           </div>
                           <div class="flex w-full">
                             <div>
-                              <v-select :options="currency" label="name" v-model="incomingCurrency"/> 
+                              <label>Incoming Currency</label>
+                              <v-select :options="currency" label="name" v-model="code.incomingCurrency"/> 
                             </div>
                             <div>
-                              <v-select :options="currency" label="name" v-model="outgoingCurrency"/> 
+                              <label>Outgoing Currency</label>
+                              <v-select :options="currency" label="name" v-model="code.outgoingCurrency"/> 
                             </div>
                           </div>
                           
@@ -50,8 +52,11 @@
         password: '',
       }, 
       currency,
-      incomingCurrency: '',
-      outgoingCurrency: ''
+      code:{
+        incomingCurrency: '',
+        outgoingCurrency: ''
+      }
+    
     }
    },
     methods:{
@@ -61,10 +66,16 @@
           },
           ...mapActions({
             signIn: 'auth/signIn',
+            getLiveRate: 'currency/getLiveRate'
           }),
            loginIn(){
               this.signIn(this.form)
-          }  
+              this.sendRate()
+          } , 
+          sendRate(){
+            this.getLiveRate(this.code)
+          }
+          
     }
     
   }
