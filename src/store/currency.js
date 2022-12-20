@@ -23,7 +23,7 @@ export default{
             try{
               const res = await axios({
                 method: 'get',
-                url: `${REQENDPOINT}&from_currency=${from}&to_currency=${to}&apikey=c2826f0ca8mshe66a64c16286c03p153e61jsnfb319e65115d`,
+                url: `${REQENDPOINT}&from_currency=${from}&to_currency=${to}&apikey=would fix later`,
               })
               if (res.status == 200){
                 console.log(res.data)
